@@ -7,15 +7,15 @@ const FilterComponent = () => {
   const [maxPrice, setMaxPrice] = useState(1000);
   const [guestRating, setGuestRating] = useState("Any");
 
-  const handleMinPriceChange = (event) => {
-    setMinPrice(event.target.value);
+  const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setMinPrice(Number(event.target.value));
   };
 
-  const handleMaxPriceChange = (event) => {
-    setMaxPrice(event.target.value);
+  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
+    setMaxPrice(Number(event.target.value));
   };
 
-  const handleGuestRatingChange = (event) => {
+  const handleGuestRatingChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
     setGuestRating(event.target.value);
   };
 

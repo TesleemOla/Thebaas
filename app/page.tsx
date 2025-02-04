@@ -1,14 +1,15 @@
-import EventCard from "./components/EventBody";
+import EventCard from "./components/EventCard";
 import InputRange from "./components/InputRange";
 
 
 export default function Home() {
   return (
-    <div>
-      The bass
+    <div className="container mx-auto flex h-fit my-10">
       <InputRange />
-      <div className="container mx-auto p-4 flex gap-4">
-      {eventData.map((item,i)=><EventCard {...item} key={i} />)}
+      <div className=" p-4 grid lg:grid-cols-2 justify-center gap-9">
+        {eventData.map((item, i) => (
+          <EventCard {...item} key={i} />
+        ))}
       </div>
     </div>
   );
@@ -17,7 +18,7 @@ export default function Home() {
 
   const eventData = [
     {
-      image: "event_center.jpg", // Replace with actual image URL
+      image: "/oniru.png", // Replace with actual image URL
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -33,7 +34,7 @@ export default function Home() {
       price: 35, // Add price
     },
     {
-      image: "event_center.jpg", // Replace with actual image URL
+      image: "/faster.png", // Replace with actual image URL
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -49,7 +50,7 @@ export default function Home() {
       price: 35,
     },
     {
-      image: "event_center.jpg", // Replace with actual image URL
+      image: "/portland.png", // Replace with actual image URL
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -65,7 +66,7 @@ export default function Home() {
       price: 35,
     },
     {
-      image: "event_center.jpg", // Replace with actual image URL
+      image: "/dreamy.jpg", // Replace with actual image URL
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -82,14 +83,6 @@ export default function Home() {
     },
   ];
 
-//   return (
-//     <div className="container mx-auto p-4 flex gap-4">
-//       {" "}
-//       {/* Center container and add gap */}
-//       <EventCard {...eventData} />
-//       <EventCard {...eventData} /> {/* Render another card */}
-//     </div>
-//   );
-// };
+
 
 // export default App;

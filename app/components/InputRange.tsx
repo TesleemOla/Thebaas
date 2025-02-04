@@ -1,9 +1,10 @@
 "use client"
 import React, { useState } from "react";
+import Button from "./Button";
 
 const FilterComponent = () => {
-  const [minPrice, setMinPrice] = useState(123);
-  const [maxPrice, setMaxPrice] = useState(123);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(1000);
   const [guestRating, setGuestRating] = useState("Any");
 
   const handleMinPriceChange = (event) => {
@@ -19,16 +20,97 @@ const FilterComponent = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      {" "}
+    <div className="bg-white p-6 rounded-lg w-[424px]">
+      <div className="bg-white rounded-lg p-6 shadow-md w-80">
+        {" "}
+        {/* Card container */}
+        <h2 className="text-lg font-medium mb-4">Your Search</h2>
+        {/* Event Type */}
+        <div className="mb-4">
+          <label
+            htmlFor="eventType"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Event Type
+          </label>
+          <input
+            type="text"
+            id="eventType"
+            className="mt-1 p-2 border rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Wedding"
+          />
+        </div>
+        {/* Location */}
+        <div className="mb-4">
+          <label
+            htmlFor="location"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Location
+          </label>
+          <input
+            type="text"
+            id="location"
+            className="mt-1 p-2 border rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Lagos"
+          />
+        </div>
+        {/* Price Range */}
+        <div className="mb-4">
+          <label
+            htmlFor="priceRange"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Price Range
+          </label>
+          <input
+            type="text"
+            id="priceRange"
+            className="mt-1 p-2 border rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="#20k - #40k"
+          />
+        </div>
+        {/* Rating */}
+        <div className="mb-6">
+          {" "}
+          {/* Increased margin bottom */}
+          <label
+            htmlFor="rating"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Rating
+          </label>
+          <input
+            type="text"
+            id="rating"
+            className="mt-1 p-2 border rounded-md w-full focus:ring-indigo-500 focus:border-indigo-500"
+            placeholder="Excellent"
+          />
+        </div>
+        {/* Search Button */}
+        <Button details="search" moreStyles="rounded-xl w-full h-[42px]" />
+      </div>
+
       {/* Container */}
       <div className="mb-4">
-        {" "}
         {/* Price Range */}
         <h3 className="text-lg font-medium mb-2">Price Range</h3>
+
+        <div className="relative">
+          <input
+            type="range"
+            className=" top-10 h-full left-5"
+            value={minPrice}
+            onChange={handleMinPriceChange}
+          />
+          <input
+            type="range"
+            className=" top-30 h-full left-5"
+            value={maxPrice}
+            onChange={handleMaxPriceChange}
+          />
+        </div>
         <div className="flex space-x-4">
-          {" "}
-          {/* Input Group */}
           <div className="w-1/2">
             {" "}
             {/* Min Price */}

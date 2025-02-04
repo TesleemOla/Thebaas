@@ -137,7 +137,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-sm text-gray-600 mt-8 pt-8 border-t border-gray-300">
+        <div className="text-center text-sm text-gray-600 mt-8 pt-8 ">
           <p>&copy; 2024 SharpEvent. Event booking agency</p>
         </div>
       </div>

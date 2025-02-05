@@ -66,7 +66,7 @@ export default function Home() {
       price: 35,
     },
     {
-      image: "/dreamy.jpg", // Replace with actual image URL
+      image: "/dreamy.png", // Replace with actual image URL
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",

@@ -4,7 +4,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div>
+    <div className="h-[95px] flex items-center">
       <nav className="flex justify-between items-center ">
         <Link
           href="/"
@@ -12,8 +12,8 @@ const Header = () => {
         >
           SHARP EVENT
         </Link>
-        <Link href="#">List your space</Link>
-        <div className="flex gap-[10px] font-semibold text-xs">
+        <Link href="#" className="hidden lg:block font-bold">List your space</Link>
+        <div className="gap-[10px] font-semibold text-xs hidden lg:flex">
           <button className="border-[#0166FF] text-[#0166FF] border-2 w-[129px] h-[42px] rounded-xl">
             Log In
           </button>

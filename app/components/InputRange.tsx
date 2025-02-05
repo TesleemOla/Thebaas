@@ -1,19 +1,23 @@
 "use client"
 import React, { useState } from "react";
 import Button from "./Button";
+import RangeSlider from "./Slider";
 
 const FilterComponent = () => {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [price, setPrice] = useState([0,100000]);
+
   const [guestRating, setGuestRating] = useState("Any");
 
   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setMinPrice(Number(event.target.value));
+    setPrice([Number(event.target.value), price[1]]);
   };
+  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>): void =>{
+    setPrice([price[0], Number(event.target.value)])
+  }
+    const handleChange = (event: Event, newValue: number | number[]) => {
+      setPrice(newValue as number[]);
+    };
 
-  const handleMaxPriceChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
-    setMaxPrice(Number(event.target.value));
-  };
 
   const handleGuestRatingChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
     setGuestRating(event.target.value);
@@ -96,20 +100,7 @@ const FilterComponent = () => {
         {/* Price Range */}
         <h3 className="text-lg font-medium mb-2">Price Range</h3>
 
-        <div className="relative">
-          <input
-            type="range"
-            className=" top-10 h-full left-5"
-            value={minPrice}
-            onChange={handleMinPriceChange}
-          />
-          <input
-            type="range"
-            className=" top-30 h-full left-5"
-            value={maxPrice}
-            onChange={handleMaxPriceChange}
-          />
-        </div>
+        <RangeSlider handleRangeChange={handleChange} value={price}/>
         <div className="flex space-x-4">
           <div className="w-1/2">
             {" "}
@@ -123,7 +114,8 @@ const FilterComponent = () => {
             <input
               type="number"
               id="min-price"
-              value={minPrice}
+              value={price[0]}
+              max={10000}
               onChange={handleMinPriceChange}
               className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-blue-300"
             />
@@ -140,7 +132,8 @@ const FilterComponent = () => {
             <input
               type="number"
               id="max-price"
-              value={maxPrice}
+              value={price[1]}
+              max={10000}
               onChange={handleMaxPriceChange}
               className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-blue-300"
             />

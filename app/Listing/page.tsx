@@ -2,7 +2,7 @@
 import React from 'react'
 import ListCard from './ListCard'
 import FilterComponent from '../components/InputRange'
-import { Pagination } from '@mui/material'
+
 
 const ListingPage = () => {
   return (

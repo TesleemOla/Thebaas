@@ -104,7 +104,7 @@ const FilterComponent = () => {
       <div>
         {" "}
         {/* Guest Rating */}
-        <h3 className="text-lg font-medium mb-2">Popular filters</h3>
+        <h3 className="text-lg font-medium my-5">Popular filters</h3>
         <div className="space-y-2">
           <div className="flex items-center">
             {" "}

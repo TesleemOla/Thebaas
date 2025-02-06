@@ -18,7 +18,7 @@ export default function Home() {
 
   const eventData = [
     {
-      image: "/oniru.png", // Replace with actual image URL
+      image: "/oniru.png", 
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -31,26 +31,10 @@ export default function Home() {
         "Air-Condition",
         "Audio-Visual Equipment",
       ],
-      price: 35, // Add price
+      price: 35, 
     },
     {
-      image: "/faster.png", // Replace with actual image URL
-      title: "Oniru Event Center",
-      rating: "9.2",
-      reviews: "832",
-      location: "0.4 km from Oniru Beach",
-      facilities: [
-        "Free packing space",
-        "Changing Room",
-        "Toilet",
-        "1000 Seat and Table",
-        "Air-Condition",
-        "Audio-Visual Equipment",
-      ],
-      price: 35,
-    },
-    {
-      image: "/portland.png", // Replace with actual image URL
+      image: "/faster.png", 
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -66,7 +50,23 @@ export default function Home() {
       price: 35,
     },
     {
-      image: "/dreamy.png", // Replace with actual image URL
+      image: "/portland.png", 
+      title: "Oniru Event Center",
+      rating: "9.2",
+      reviews: "832",
+      location: "0.4 km from Oniru Beach",
+      facilities: [
+        "Free packing space",
+        "Changing Room",
+        "Toilet",
+        "1000 Seat and Table",
+        "Air-Condition",
+        "Audio-Visual Equipment",
+      ],
+      price: 35,
+    },
+    {
+      image: "/dreamy.png", 
       title: "Oniru Event Center",
       rating: "9.2",
       reviews: "832",
@@ -85,4 +85,3 @@ export default function Home() {
 
 
 
-// export default App;

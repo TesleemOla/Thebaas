@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import RangeSlider from "./Slider";
+import { redirect } from "next/navigation";
 
 const FilterComponent = () => {
   const [price, setPrice] = useState([0,100000]);
@@ -98,7 +99,7 @@ const FilterComponent = () => {
           />
         </div>
         {/* Search Button */}
-        <Button details="search" moreStyles="rounded-xl w-full h-[42px]" />
+        <Button click={()=> redirect("/Listing")} details="search" moreStyles="rounded-xl w-full h-[42px]" />
       </div>
       <div>
         {" "}

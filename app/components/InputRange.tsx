@@ -7,6 +7,7 @@ const FilterComponent = () => {
   const [price, setPrice] = useState([0,100000]);
 
   const [guestRating, setGuestRating] = useState("Any");
+  const [popFilter, setPopFilter] = useState("None")
 
   const handleMinPriceChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setPrice([Number(event.target.value), price[1]]);
@@ -22,9 +23,14 @@ const FilterComponent = () => {
   const handleGuestRatingChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
     setGuestRating(event.target.value);
   };
+  const handlePopFilterChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    setPopFilter(event.target.value);
+  };
 
   return (
-    <div className="bg-white p-6 rounded-lg w-[424px]">
+    <div className="bg-white p-6 rounded-lg w-[424px] hidden lg:block">
       <div className="bg-white rounded-lg p-6 shadow-md w-80">
         {" "}
         {/* Card container */}
@@ -94,13 +100,86 @@ const FilterComponent = () => {
         {/* Search Button */}
         <Button details="search" moreStyles="rounded-xl w-full h-[42px]" />
       </div>
+      <div>
+        {" "}
+        {/* Guest Rating */}
+        <h3 className="text-lg font-medium mb-2">Popular filters</h3>
+        <div className="space-y-2">
+          <div className="flex items-center">
+            {" "}
+            {/* Any */}
+            <input
+              type="checkbox"
+              id="any"
+              value="Wedding"
+              checked={popFilter === "Wedding"}
+              onChange={handlePopFilterChange}
+              className="mr-2"
+            />
+            <label htmlFor="any" className="text-sm font-medium text-gray-700">
+              Wedding
+            </label>
+          </div>
+          <div className="flex items-center">
+            {" "}
+            {/* Excellent */}
+            <input
+              type="checkbox"
+              id="Dinner"
+              value="Dinner Parties"
+              checked={popFilter === "Dinner"}
+              onChange={handlePopFilterChange}
+              className="mr-2"
+            />
+            <label
+              htmlFor="Dinner"
+              className="text-sm font-medium text-gray-700"
+            >
+              Dinner
+            </label>
+          </div>
+          <div className="flex items-center">
+            {" "}
+            {/* Very Good */}
+            <input
+              type="checkbox"
+              id="Meeting"
+              value="Meeting"
+              checked={popFilter === "Meeting"}
+              onChange={handlePopFilterChange}
+              className="mr-2"
+            />
+            <label
+              htmlFor="Meeting"
+              className="text-sm font-medium text-gray-700"
+            >
+             Meeting
+            </label>
+          </div>
+          <div className="flex items-center">
+            {" "}
+            {/* Good */}
+            <input
+              type="checkbox"
+              id="network"
+              value="Network"
+              checked={popFilter === "Network"}
+              onChange={handlePopFilterChange}
+              className="mr-2"
+            />
+            <label htmlFor="good" className="text-sm font-medium text-gray-700">
+              Network
+            </label>
+          </div>
+        </div>
+      </div>
 
       {/* Container */}
       <div className="mb-4">
         {/* Price Range */}
         <h3 className="text-lg font-medium mb-2">Price Range</h3>
 
-        <RangeSlider handleRangeChange={handleChange} value={price}/>
+        <RangeSlider handleRangeChange={handleChange} value={price} />
         <div className="flex space-x-4">
           <div className="w-1/2">
             {" "}
@@ -117,7 +196,7 @@ const FilterComponent = () => {
               value={price[0]}
               max={10000}
               onChange={handleMinPriceChange}
-              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-blue-300"
+              className="mt-1 p-2 border rounded-md w-2/3 focus:ring focus:ring-blue-300"
             />
           </div>
           <div className="w-1/2">
@@ -135,7 +214,7 @@ const FilterComponent = () => {
               value={price[1]}
               max={10000}
               onChange={handleMaxPriceChange}
-              className="mt-1 p-2 border rounded-md w-full focus:ring focus:ring-blue-300"
+              className="mt-1 p-2 border rounded-md w-2/3 focus:ring focus:ring-blue-300"
             />
           </div>
         </div>
@@ -151,7 +230,7 @@ const FilterComponent = () => {
             {" "}
             {/* Any */}
             <input
-              type="radio"
+              type="checkbox"
               id="any"
               value="Any"
               checked={guestRating === "Any"}
@@ -166,7 +245,7 @@ const FilterComponent = () => {
             {" "}
             {/* Excellent */}
             <input
-              type="radio"
+              type="checkbox"
               id="excellent"
               value="Excellent"
               checked={guestRating === "Excellent"}
@@ -184,7 +263,7 @@ const FilterComponent = () => {
             {" "}
             {/* Very Good */}
             <input
-              type="radio"
+              type="checkbox"
               id="very-good"
               value="Very good"
               checked={guestRating === "Very good"}
@@ -202,7 +281,7 @@ const FilterComponent = () => {
             {" "}
             {/* Good */}
             <input
-              type="radio"
+              type="checkbox"
               id="good"
               value="Good"
               checked={guestRating === "Good"}

@@ -4,11 +4,11 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className="h-[95px] flex items-center">
-      <nav className="flex justify-between items-center ">
+    <div className="container mx-auto h-[95px] flex items-center">
+      <nav className="flex justify-between items-center w-[1231px] mx-auto">
         <Link
           href="/"
-          className="mb-2 lg:mt-5 text-[#0166FF] text-2xl font-extrabold"
+          className="mb-2 lg:mt-5 ml-10 text-[#0166FF] text-2xl font-extrabold"
         >
           SHARP EVENT
         </Link>

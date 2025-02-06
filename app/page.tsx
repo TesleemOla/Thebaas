@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container mx-auto flex h-fit my-10">
       <InputRange />
-      <div className=" p-4 grid lg:grid-cols-2 justify-center gap-9">
+      <div className=" p-4 grid lg:grid-cols-2 justify-center gap-9 mx-auto">
         {eventData.map((item, i) => (
           <EventCard {...item} key={i} />
         ))}
